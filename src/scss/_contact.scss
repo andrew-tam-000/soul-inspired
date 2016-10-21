@@ -1,0 +1,27 @@
+.contact__title {
+    @include type--header;
+    text-align: center;
+}
+
+.contact__list {
+    margin-top: 3em;
+}
+
+
+@media ( min-width: $desktop ) {
+
+    .contact__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .contact-card {
+            width: 46%;
+            &:nth-child(n+3) {
+                margin-top: 8%;
+            }
+        }
+
+    }
+
+}

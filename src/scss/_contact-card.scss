@@ -1,0 +1,131 @@
+.contact-card {
+    border: 1px solid black;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    &.contact-card--active {
+        .contact-card__name {
+            transform: scale(1) translateX(0) translateY(0);
+        }
+
+        .contact-card__footer,
+        .contact-card__details {
+            opacity: 1;
+        }
+    }
+}
+
+.contact-card__image-holder {
+    background-image: url('/images/profile.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.contact-card__description {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-card__name {
+    transition: transform .4s;
+    transform: scale(2) translateX(calc(25% + 1em)) translateY(1em);
+}
+
+.contact-card__footer,
+.contact-card__details {
+    transition: opacity .4s;
+    opacity: 0;
+}
+
+
+.contact-card__left,
+.contact-card__right {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-card__right {
+    background-color: rgba(black, .5);
+    color: white;
+}
+
+
+.contact-card__details {
+    margin-top: 1em;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.contact-card__footer {
+    margin-top: 1em;
+}
+
+
+@media (min-width: $tablet ) {
+
+    .contact-card {
+        display: flex;
+        &:before {
+            display: none;
+        }
+    }
+
+    .contact-card__left,
+    .contact-card__right {
+        flex: 1;
+        height: auto;
+        position: relative;
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 100%;
+        }
+    }
+
+    .contact-card__right {
+        background-color: transparent;
+        color: black;
+    }
+
+
+    .contact-card {
+        &.contact-card--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .contact-card__name {
+        transform: scale(1) translateX(0) translateY(0);
+    }
+
+    .contact-card__details,
+    .contact-card__footer {
+        opacity: 1;
+    }
+}
+
+@media (min-width: $desktop ) {
+    .contact-card {
+        &.contact-card--reverse {
+            flex-direction: row;
+        }
+    }
+}

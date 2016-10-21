@@ -1,0 +1,27 @@
+.classes {
+
+}
+
+.classes__title {
+    @include type--splash;
+}
+
+.classes__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .location {
+        width: 45%;
+        &:nth-child(n + 3) {
+            margin-top: 3em;
+        }
+    }
+
+
+}
+
+
+@media (min-width: $desktop) {
+}
+

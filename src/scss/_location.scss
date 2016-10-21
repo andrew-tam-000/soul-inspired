@@ -1,0 +1,50 @@
+.location__details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location__right {
+    align-self: flex-end;
+}
+
+
+.location__image {
+    width: 100%;
+    height: auto;
+}
+
+.location__details {
+    margin-top: 1em;
+}
+
+.location__name {
+    @include type--header;
+}
+
+
+.location__address {
+    font-style: italic;
+    @include type--subheader;
+}
+
+.location__instructor {
+    @include type--medium;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 0px;
+        border: 1px solid black;
+        margin-top: .5em;
+    }
+}
+
+.location__fees {
+    @include type--medium;
+}
+
+
+.location__dates {
+    margin-top: 1em;
+}
+

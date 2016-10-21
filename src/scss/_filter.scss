@@ -1,0 +1,15 @@
+.filter {
+    padding: 1em;
+    display: flex;
+    border-radius: $border-radius;
+    border: 1px solid black;
+}
+
+.filter__item {
+    flex: 1;
+    text-align: center;
+
+    &:not(:first-child) {
+        border-left: 1px solid black;
+    }
+}

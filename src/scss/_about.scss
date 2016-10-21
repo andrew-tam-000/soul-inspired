@@ -1,0 +1,9 @@
+.about__title {
+    @include type--header;
+    text-align: center;
+}
+
+.about__description {
+    @include type--default;
+    margin-top: 3em;
+}

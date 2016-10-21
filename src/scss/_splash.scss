@@ -1,0 +1,32 @@
+.splash {
+    background-image: url('/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.splash__shim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .75;
+}
+
+.splash__content {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+}
+
+@media (min-width: $desktop ) {
+    .splash__content {
+        display: none;
+    }
+}
