@@ -1,3 +1,9 @@
+.location {
+    color: white;
+    padding: 2em;
+    border: 1px solid white;
+}
+
 .location__details {
     display: flex;
     justify-content: space-between;
@@ -11,6 +17,7 @@
 .location__image {
     width: 100%;
     height: auto;
+    margin-bottom: 1em;
 }
 
 .location__details {
@@ -18,33 +25,36 @@
 }
 
 .location__name {
-    @include type--header;
+    @include type--subheader;
+    color: $pastel;
 }
 
 
 .location__address {
-    font-style: italic;
-    @include type--subheader;
+    @include type--medium;
 }
 
 .location__instructor {
-    @include type--medium;
+    display: inline-block;
+
+    @include type--default;
 
     &:after {
         content: '';
         display: block;
         height: 0px;
-        border: 1px solid black;
+        border-bottom: 1px solid white;
         margin-top: .5em;
     }
 }
 
 .location__fees {
+    color: $pastel;
     @include type--medium;
 }
 
 
 .location__dates {
-    margin-top: 1em;
+    margin-top: .8em;
 }
 

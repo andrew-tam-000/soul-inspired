@@ -1,5 +1,6 @@
 $border-radius: 1em;
 $accent: #CA01FD;
+$pastel: #89E894;
 $tablet: 768px;
 $desktop: 1024px;
 $max-width: 1280px;
@@ -18,7 +19,6 @@ $inset: 768px;
 @import 'contact-card';
 @import 'classes';
 @import 'location';
-@import 'featured';
 @import 'footer';
 
 
@@ -26,6 +26,7 @@ html, body {
     font-family: 'Raleway', sans-serif;
     line-height: 1em;
     overflow-x: hidden;
+
 }
 
 * {
@@ -49,16 +50,30 @@ a {
     }
 }
 
-.content {
-    .about {
-        margin-top: 3em;
-    }
+.accent {
+    color: $accent;
+}
+.pastel {
+    color: $pastel;
+}
 
-    .footer {
-        margin-top: 3em;
-    }
+.section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
 
-    .contact {
-        margin-top: 3em;
-    }
+.section__title {
+}
+
+.section__description {
+}
+
+.divider {
+    width: $inset;
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }

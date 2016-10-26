@@ -1,18 +1,47 @@
 .classes {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        position: absolute;
+
+        content: '';
+        width: 200%;
+        height: 200%;
+        left: -50%;
+        top: -50%;
+        z-index: -1;
+        transform: rotate(120deg);
+        background-image: url('/images/wood.png');
+    }
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aa00ff+0,ff00e1+100&0.8+0,0.8+100 */
+    background: -moz-linear-gradient(-45deg,  rgba(170,0,255,0.5) 0%, rgba(255,0,225,0.5) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  rgba(170,0,255,0.5) 0%,rgba(255,0,225,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  rgba(170,0,255,0.5) 0%,rgba(255,0,225,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccaa00ff', endColorstr='#ccff00e1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
 
 .classes__title {
-    @include type--splash;
+    color: white;
+    @include type--header;
+}
+
+.classes__description {
+    margin-top: .5em;
+    color: white;
+    @include type--medium;
 }
 
 .classes__list {
+    margin-top: 3em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     .location {
-        width: 45%;
+        width: 48%;
         &:nth-child(n + 3) {
             margin-top: 3em;
         }

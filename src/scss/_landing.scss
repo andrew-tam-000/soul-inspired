@@ -24,10 +24,12 @@
 
 .landing__title {
     @include type--splash;
+    color: $accent;
 }
 
 .landing__description {
     @include type--subheader;
+    color: $pastel;
 }
 
 .landing__lower {

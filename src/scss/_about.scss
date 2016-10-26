@@ -1,9 +1,48 @@
+.about {
+    position: relative;
+    background-color: rgba($pastel, .5);
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -80%;
+        left: -50%;
+        z-index: -1;
+        opacity: .1;
+        background-image: url('/images/notes.png');
+        background-position: center;
+        background-size: 300px;
+        background-repeat: repeat-x;
+        transform: rotate(20deg);
+    }
+
+    &:after {
+        top: 0%;
+    }
+}
+
+.about__content {
+    display: flex;
+}
+
 .about__title {
     @include type--header;
+    color: $accent;
+    white-space: nowrap;
     text-align: center;
+
 }
 
 .about__description {
     @include type--default;
-    margin-top: 3em;
+    margin-left: 4em;
+}
+
+.about__video {
+    margin-top: 4em;
+    width: 100%;
+    height: auto;
 }

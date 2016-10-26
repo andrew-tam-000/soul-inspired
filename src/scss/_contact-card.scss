@@ -43,6 +43,7 @@
 }
 
 .contact-card__name {
+    @include type--subheader;
     transition: transform .4s;
     transform: scale(2) translateX(calc(25% + 1em)) translateY(1em);
 }
@@ -102,7 +103,6 @@
 
     .contact-card__right {
         background-color: transparent;
-        color: black;
     }
 
 
