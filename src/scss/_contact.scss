@@ -2,22 +2,6 @@
     background-color: rgba(black, .8);
 }
 
-.contact__title {
-    @include type--header;
-    color: white;
-}
-
-.contact__description {
-    @include type--medium;
-    color: white;
-    margin-top: .5em;
-}
-
-.contact__list {
-    margin-top: 3em;
-}
-
-
 @media ( min-width: $desktop ) {
 
     .contact__list {

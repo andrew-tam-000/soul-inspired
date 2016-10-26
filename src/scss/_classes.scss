@@ -23,19 +23,8 @@
 
 }
 
-.classes__title {
-    color: white;
-    @include type--header;
-}
-
-.classes__description {
-    margin-top: .5em;
-    color: white;
-    @include type--medium;
-}
 
 .classes__list {
-    margin-top: 3em;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

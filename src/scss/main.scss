@@ -8,6 +8,7 @@ $inset: 768px;
 
 @import 'reset';
 @import 'typography';
+@import 'colors';
 @import 'header';
 @import 'splash';
 @import 'landing';
@@ -50,22 +51,23 @@ a {
     }
 }
 
-.accent {
-    color: $accent;
-}
-.pastel {
-    color: $pastel;
-}
-
 .section {
     padding-top: 3em;
     padding-bottom: 3em;
 }
 
 .section__title {
+    white-space: nowrap;
+    @include type--header;
 }
 
 .section__description {
+    margin-top: .5em;
+    @include type--medium;
+}
+
+.section__content {
+    margin-top: 3em;
 }
 
 .divider {

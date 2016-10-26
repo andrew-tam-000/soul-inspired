@@ -9,17 +9,6 @@
 
 }
 
-.list-page__title {
-    @include type--header;
-}
-
-.list-page__description {
-    @include type--medium;
-}
-
-.list-page__section {
-    margin-top: 2em;
-}
 
 .list-page__section-title {
     @include type--subheader;
