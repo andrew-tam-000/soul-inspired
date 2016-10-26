@@ -24,25 +24,12 @@
     }
 }
 
-.about__content {
-    display: flex;
-}
-
-.about__title {
-    @include type--header;
-    color: $accent;
-    white-space: nowrap;
-    text-align: center;
-
-}
-
 .about__description {
+    margin-top: 3em;
     @include type--default;
-    margin-left: 4em;
 }
 
 .about__video {
-    margin-top: 4em;
     width: 100%;
     height: auto;
 }
