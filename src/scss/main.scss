@@ -9,6 +9,9 @@ $inset: 768px;
 @import 'reset';
 @import 'typography';
 @import 'colors';
+
+@import 'container';
+@import 'section';
 @import 'header';
 @import 'splash';
 @import 'landing';
@@ -41,41 +44,3 @@ a {
 }
 
 
-.container {
-    max-width: $max-width;
-    margin-left: auto;
-    margin-right: auto;
-
-    &.container--inset {
-        max-width: $inset;
-    }
-}
-
-.section {
-    padding-top: 3em;
-    padding-bottom: 3em;
-}
-
-.section__title {
-    white-space: nowrap;
-    @include type--header;
-}
-
-.section__description {
-    margin-top: .5em;
-    @include type--medium;
-}
-
-.section__content {
-    margin-top: 3em;
-}
-
-.divider {
-    width: $inset;
-    border: 1px solid black;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-}

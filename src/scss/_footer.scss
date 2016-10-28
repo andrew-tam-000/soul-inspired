@@ -1,6 +1,6 @@
 .footer {
-    background-color: rgba(black, .8);
-    color: $accent;
+    background-color: black;
+    color: $pastel;
 }
 
 
@@ -30,7 +30,7 @@
 
     .footer__link-holder {
         flex: 1;
-        align-items: center;
+        align-items: flex-end;
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -41,7 +41,9 @@
     }
 
     .footer__bottom {
-        align-self: flex-end;
+        * + * {
+            margin-top: 1em;
+        }
     }
 
 

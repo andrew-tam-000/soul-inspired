@@ -30,16 +30,24 @@
     justify-content: space-between;
 
     .location {
-        width: 48%;
-        &:nth-child(n + 3) {
+        width: 100%;
+        + * {
             margin-top: 3em;
         }
     }
-
 
 }
 
 
 @media (min-width: $desktop) {
+
+    .classes__list {
+        .location {
+            width: 48%;
+            &:nth-child(n + 3) {
+                margin-top: 3em;
+            }
+        }
+    }
 }
 

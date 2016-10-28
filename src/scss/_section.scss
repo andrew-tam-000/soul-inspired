@@ -1,0 +1,24 @@
+.section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.section__title {
+    @include type--header;
+}
+
+.section__description {
+    margin-top: .5em;
+    @include type--medium;
+}
+
+.section__content {
+    margin-top: 3em;
+}
+
+
+@media ( min-width: $desktop ) {
+    .section__title {
+        white-space: nowrap;
+    }
+}
