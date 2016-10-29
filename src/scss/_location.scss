@@ -1,7 +1,5 @@
 .location {
     color: white;
-    padding: 2em;
-    border: 1px solid white;
 }
 
 .location__details {
@@ -10,27 +8,34 @@
 }
 
 .location__right {
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 
 .location__image {
     width: 100%;
     height: auto;
-    margin-bottom: 1em;
 }
 
 .location__details {
     margin-top: 1em;
 }
 
+.location__group {
+    + * {
+        margin-top: 1em;
+    }
+}
+
 .location__name {
     @include type--subheader;
     color: $pastel;
+    margin-bottom: .5em;
 }
 
 
 .location__address {
+    margin-top: .5em;
     @include type--medium;
 }
 
@@ -44,7 +49,7 @@
         display: block;
         height: 0px;
         border-bottom: 1px solid white;
-        margin-top: .5em;
+        margin-top: .1em;
     }
 }
 
@@ -55,6 +60,6 @@
 
 
 .location__dates {
-    margin-top: .8em;
+    margin-top: .4em;
 }
 

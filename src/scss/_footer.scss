@@ -21,7 +21,7 @@
 
     .footer__link {
         &:not(:first-child) {
-            margin-top: 1em;
+            margin-top: .5em;
         }
     }
 
@@ -42,7 +42,7 @@
 
     .footer__bottom {
         * + * {
-            margin-top: 1em;
+            margin-top: .5em;
         }
     }
 

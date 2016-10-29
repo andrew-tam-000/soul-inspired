@@ -43,7 +43,8 @@
 
     .classes__list {
         .location {
-            width: 48%;
+            width: 46%;
+            margin-top: 0;
             &:nth-child(n + 3) {
                 margin-top: 3em;
             }
