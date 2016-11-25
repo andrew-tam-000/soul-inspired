@@ -1,14 +1,28 @@
 .filter {
-    padding: 1em;
     display: flex;
     border: 1px solid black;
+    width: 100%;
+    position: relative;
 }
 
 .filter__item {
     flex: 1;
     text-align: center;
+    padding: .7em;
+    transition: transform .4s, color .4s;
+    z-index: 1;
 
-    &:not(:first-child) {
-        border-left: 1px solid black;
+    &.filter__item--active {
+        color: $accent;
+    }
+
+    &.filter__item--background {
+        position: absolute;
+        background-color: $pastel;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 0;
     }
 }
+

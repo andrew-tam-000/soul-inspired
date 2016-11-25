@@ -5,6 +5,7 @@ var gulpWebpack = require('gulp-webpack');
 var webpack = require('webpack');
 var browserSync = require('browser-sync').create();
 var path = require('path');
+var gulpPlumber = require('gulp-plumber');
 
 
 var SASS_INPUT = './src/scss/**/*.scss';
@@ -25,6 +26,7 @@ gulp.task('scss:watch', function() {
 gulp.task('scss', function() {
     return gulp.src(SASS_INPUT)
         .pipe(sourcemaps.init())
+        .pipe(gulpPlumber())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(SASS_OUTPUT_DIR));

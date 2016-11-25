@@ -1,0 +1,15 @@
+.events {
+    &.section {
+        .section__content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.events__list {
+    overflow: auto;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+

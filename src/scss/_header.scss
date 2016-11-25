@@ -1,12 +1,64 @@
 .header {
     position: fixed;
     top: 0;
-    background-color: gray;
+    background-color: $pastel;
     width: 100%;
-    z-index: 1;
-    height: 50px;
+    z-index: 3;
+    height: $header-height;
     box-shadow: 1px 1px 10px 5px black;
-    display: none;
+    display: flex;
+    padding: .5em;
+
+    &.header--enter {
+        transform: translateY(calc(-100% - 10px));
+    }
+
+    &.header--enterActive {
+        transform: none;
+        transition: transform .4s;
+    }
+
+    &.header--leave {
+        transform: none;
+    }
+
+
+    &.header--leaveActive {
+        transform: translateY(calc(-100% - 10px));
+        transition: transform .4s;
+    }
+
+
 }
 
+.header__logo {
+    height: 100%;
+    width: auto;
+}
 
+.header__items {
+    position: relative;
+    margin-left: 1em;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.header__item {
+    height: 100%;
+
+    &:not(:first-child) {
+        margin-left: 1em;
+    }
+}
+
+.header__item-text {
+    position: relative;
+    top: 50%;
+    margin-top: -.5em;
+    display: block;
+}

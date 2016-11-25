@@ -1,6 +1,37 @@
 @mixin type--splash {
-    font-size: 50px;
+    font-size: 40px;
+    line-height: 1.2em;
+}
+
+@mixin type--header {
+    font-size: 30px;
+    line-height: 1.1em;
+    font-weight: 800;
+}
+
+@mixin type--subheader {
+    font-size: 20px;
+    line-height: 1.1em;
+}
+
+@mixin type--medium {
+    font-size: 20px;
     line-height: 1.4em;
+}
+
+@mixin type--default {
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+
+@media ( min-width: $desktop ) {
+}
+
+/*
+@mixin type--splash {
+    font-size: 50px;
+    line-height: 1.2em;
 }
 
 @mixin type--header {
@@ -23,4 +54,4 @@
     font-size: 16px;
     line-height: 1.4em;
 }
-
+*/

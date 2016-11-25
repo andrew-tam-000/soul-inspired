@@ -1,7 +1,14 @@
 .about {
-    position: relative;
     background-color: rgba($pastel, .5);
 
+    &.section {
+        .section__content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    /*
     &:after,
     &:before {
         content: "";
@@ -22,11 +29,14 @@
     &:after {
         top: 0%;
     }
+    */
 }
 
 .about__description {
-    margin-top: 1em;
     @include type--default;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1em;
 }
 
 .about__video {

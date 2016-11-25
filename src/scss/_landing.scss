@@ -1,13 +1,46 @@
 .landing {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+
 
     .item {
         width: 75%;
+    }
+
+    &.section {
+        height: 100%;
+        top: 0px;
+        padding-top: 1em;
+    }
+
+
+    &:before {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: rgba(black, .8);
+        background-image: none;
+        transform: none;
+        left: 0;
+        top: 0;
+    }
+
+    &:after {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-image: url('/images/vertical.jpg');
+        background-color: black;
+        background-size: cover;
+        background-position: center;
     }
 
 }
@@ -25,11 +58,28 @@
 .landing__title {
     @include type--splash;
     color: $accent;
+    text-align: center;
 }
 
 .landing__description {
     @include type--subheader;
     color: $pastel;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.landing__nav {
+    margin-top: 1em;
+    text-align: center;
+    @include type--medium;
+    color: white;
+}
+
+.landing__social,
+.landing__email {
+    @include type--medium;
+    color: white;
+    margin-top: 1em;
 }
 
 .landing__lower {

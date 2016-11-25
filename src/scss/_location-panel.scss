@@ -1,0 +1,63 @@
+.location-panel {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+.location-panel__days {
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.location-panel__description-container {
+    position: relative;
+    top: -6px;
+}
+
+.location-panel__day {
+    padding: .7em;
+    display: block;
+    z-index: 1;
+    position: relative;
+    transition: color .4s;
+    color: white;
+
+    &.location-panel__day--active {
+        color: $accent;
+    }
+
+    &.location-panel__day--background {
+        transition: transform .4s;
+        position: absolute;
+        top: 0;
+        color: transparent;
+        background-color: $pastel;
+        z-index: 0;
+    }
+}
+
+.location-panel__day-long {
+    display: none;
+}
+
+.location-panel__description-holder {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    height: 100%;
+}
+
+.location-panel__description-scroll {
+    transition: transform .4s;
+}
+
+.location-panel__description {
+    padding: 1em;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
