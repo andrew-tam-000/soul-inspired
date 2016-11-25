@@ -1,4 +1,3 @@
-import dataJsSelector from './dataJsSelector';
 import $ from 'jquery';
 
 import React from 'react';
