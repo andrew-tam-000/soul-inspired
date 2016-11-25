@@ -2,6 +2,12 @@
     display: flex;
     height: 100%;
     overflow: hidden;
+
+    .location {
+        &:not(:first-child) {
+            margin-top: 2em;
+        }
+    }
 }
 
 .location-panel__days {
