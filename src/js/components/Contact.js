@@ -28,6 +28,7 @@ class Contact extends Component {
                                         ]
                                     ]}
                                     image={contact.image}
+                                    large={true}
                                     extra={contact.description}
                                 />
                             )

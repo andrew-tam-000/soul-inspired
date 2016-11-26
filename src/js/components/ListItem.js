@@ -22,7 +22,7 @@ class ListItem extends Component {
             <div className={
                 classnames({
                     'list-item': true
-                    , 'list-item--large': true
+                    , 'list-item--large': this.props.large
                     , 'list-item--extra': this.state.extra
                 })
             }
