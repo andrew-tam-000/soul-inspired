@@ -3,41 +3,9 @@ import Filter from './Filter';
 import _ from 'lodash';
 import Section from './Section';
 import ListItem from './ListItem';
+import appData from '../appData';
 
 
-
-const eventData = [
-    {
-        title: 'Test One'
-        , subtitle: 'Test ASubtitle'
-        , image: '/images/logo.svg'
-        , type: 'upcoming'
-    }
-    , {
-        title: 'Test Two'
-        , subtitle: 'Test TRhee'
-        , image: '/images/logo.svg'
-        , type: 'upcoming'
-    }
-    , {
-        title: 'Test Two'
-        , subtitle: 'Test TRhee'
-        , image: '/images/logo.svg'
-        , type: 'past'
-    }
-    , {
-        title: 'Test Two'
-        , subtitle: 'Test TRhee'
-        , image: '/images/logo.svg'
-        , type: 'past'
-    }
-    , {
-        title: 'Test Two'
-        , subtitle: 'Test TRhee'
-        , image: '/images/logo.svg'
-        , type: 'past'
-    }
-];
 
 class Events extends Component {
 
@@ -63,7 +31,7 @@ class Events extends Component {
                 />
                 <div className='events__list'>
                     { _.map(
-                        (this.state.filter === 'all' ? eventData : _.filter(eventData, event => event.type === this.state.filter ))
+                        (this.state.filter === 'all' ? appData.eventData : _.filter(appData.eventData, event => event.type === this.state.filter ))
                         , (event, idx) => (
                             <ListItem
                                 key={idx}

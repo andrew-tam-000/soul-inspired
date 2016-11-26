@@ -226,9 +226,44 @@ const contacts = [
     }
 ];
 
+const eventData = [
+    {
+        title: 'Test One'
+        , subtitle: 'Test ASubtitle'
+        , image: '/images/logo.svg'
+        , type: 'upcoming'
+    }
+    , {
+        title: 'Test Two'
+        , subtitle: 'Test TRhee'
+        , image: '/images/logo.svg'
+        , type: 'upcoming'
+    }
+    , {
+        title: 'Test Two'
+        , subtitle: 'Test TRhee'
+        , image: '/images/logo.svg'
+        , type: 'past'
+    }
+    , {
+        title: 'Test Two'
+        , subtitle: 'Test TRhee'
+        , image: '/images/logo.svg'
+        , type: 'past'
+    }
+    , {
+        title: 'Test Two'
+        , subtitle: 'Test TRhee'
+        , image: '/images/logo.svg'
+        , type: 'past'
+    }
+];
+
+
 
 export default {
     locations
     , nav
     , contacts
+    , eventData
 };
