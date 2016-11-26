@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var browserSync = require('browser-sync').create();
 var path = require('path');
 var gulpPlumber = require('gulp-plumber');
+var autoprefixer = require('gulp-autoprefixer');
 
 
 var SASS_INPUT = './src/scss/**/*.scss';
@@ -21,6 +22,22 @@ var JS_OUTPUT_FILEPATH = path.join(JS_OUTPUT_DIR, JS_OUTPUT_FILENAME);
 gulp.task('scss:watch', function() {
     gulp.watch(SASS_INPUT, ['scss']);
 });
+
+gulp.task('scss:build', function() {
+
+    return gulp.src(SASS_INPUT)
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 4 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(SASS_OUTPUT_DIR))
+    ;
+
+});
+
 
 
 gulp.task('scss', function() {
@@ -54,6 +71,35 @@ gulp.task('js:watch', function() {
     ;
 });
 
+gulp.task('js:build', function() {
+    return gulp.src(JS_INPUT)
+        .pipe(gulpWebpack({
+            plugins: [
+                new webpack.DefinePlugin({
+                    "process.env": {
+                        // This has effect on the react lib size
+                        "NODE_ENV": JSON.stringify("production")
+                    }
+                })
+                , new webpack.optimize.UglifyJsPlugin()
+            ]
+            , module: {
+                loaders: [
+                    {
+                        test: /\.js/
+                        , exclude: /(node_modules)/
+                        , loader: 'babel'
+                    }
+                ]
+            }
+            , output: {
+                filename: JS_OUTPUT_FILENAME
+            }
+        }, webpack))
+        .pipe(gulp.dest(JS_OUTPUT_DIR))
+    ;
+});
+
 gulp.task('watch', ['scss:watch', 'js:watch']);
 
 gulp.task('browser-sync', function() {
@@ -77,4 +123,4 @@ gulp.task('browser-sync', function() {
 
 gulp.task('start', ['watch', 'browser-sync']);
 
-gulp.task('build');
+gulp.task('build', ['scss:build', 'js:build']);
