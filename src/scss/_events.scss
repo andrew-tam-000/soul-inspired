@@ -5,6 +5,21 @@
             flex-direction: column;
         }
     }
+
+    .list-item {
+        &:not(first-child):after {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            height: 0px;
+            margin: auto;
+            bottom: 0;
+            border-bottom: 1px solid black;
+            content: '';
+        }
+    }
+
 }
 
 .events__list {

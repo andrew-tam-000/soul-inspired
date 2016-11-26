@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Filter from './Filter';
 import _ from 'lodash';
 import Section from './Section';
+import ListItem from './ListItem';
 
 
 
@@ -10,48 +11,44 @@ const eventData = [
         title: 'Test One'
         , subtitle: 'Test ASubtitle'
         , image: '/images/logo.svg'
+        , type: 'upcoming'
     }
     , {
         title: 'Test Two'
         , subtitle: 'Test TRhee'
         , image: '/images/logo.svg'
+        , type: 'upcoming'
     }
     , {
         title: 'Test Two'
         , subtitle: 'Test TRhee'
         , image: '/images/logo.svg'
+        , type: 'past'
     }
     , {
         title: 'Test Two'
         , subtitle: 'Test TRhee'
         , image: '/images/logo.svg'
+        , type: 'past'
     }
     , {
         title: 'Test Two'
         , subtitle: 'Test TRhee'
         , image: '/images/logo.svg'
+        , type: 'past'
     }
 ];
 
-const EventItem = ({title, subtitle, image}) => {
-    return (
-        <div className='event-item'>
-            <div className='event-item__image-holder'>
-                <img src={image} className='event-item__image'/>
-            </div>
-            <div className='event-item__content'>
-                <div className='event-item__headline'>
-                    { title }
-                </div>
-                <div className='event-item__subtitle'>
-                    { subtitle }
-                </div>
-            </div>
-        </div>
-    );
-};
-
 class Events extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            filter: 'upcoming'
+        }
+    }
+
     render() {
         return (
             <Section
@@ -61,11 +58,28 @@ class Events extends Component {
             >
                 <Filter
                     list={['Upcoming', 'Past', 'All']}
-                    activeFilter={'upcoming'}
+                    activeFilter={this.state.filter}
                     onClick={ filterItem => this.setState({filter: filterItem}) }
                 />
                 <div className='events__list'>
-                    { _.map(eventData, event => <EventItem {...event}/>) }
+                    { _.map(
+                        (this.state.filter === 'all' ? eventData : _.filter(eventData, event => event.type === this.state.filter ))
+                        , (event, idx) => (
+                            <ListItem
+                                key={idx}
+                                image={event.image}
+                                rowData={[
+                                    [
+                                        event.title
+                                    ]
+                                    , 
+                                    [
+                                        event.subtitle
+                                    ]
+                                ]}
+                           />
+                        )
+                    )}
                 </div>
             </Section>
         );

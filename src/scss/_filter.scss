@@ -1,16 +1,19 @@
 .filter {
     display: flex;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     width: 100%;
     position: relative;
 }
 
 .filter__item {
+
     flex: 1;
     text-align: center;
     padding: .7em;
     transition: transform .4s, color .4s;
     z-index: 1;
+    position: relative;
 
     &.filter__item--active {
         color: $accent;
@@ -24,5 +27,21 @@
         height: 100%;
         z-index: 0;
     }
+
+    &:not(:first-child):not(:last-child) {
+        &:before {
+            content: '';
+            position: absolute;
+            height: 50%;
+            border-left: 1px solid black;
+            width: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
 }
 

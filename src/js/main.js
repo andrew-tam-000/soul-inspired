@@ -9,6 +9,7 @@ import Classes from './components/Classes';
 import About from './components/About';
 import Events from './components/Events';
 import Homepage from './components/Homepage';
+import Contact from './components/Contact';
 
 import store from './redux/store';
 import { Provider } from 'react-redux';
@@ -27,6 +28,7 @@ ReactDOM.render(
             <Route path='about' component={About}/>
             <Route path='events' component={Events}/>
             <Route path='classes' component={Classes}/>
+            <Route path='contact' component={Contact}/>
         </Route>
     </Router>
     , document.getElementById('root')
